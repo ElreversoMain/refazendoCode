@@ -1,0 +1,5 @@
+const nome=prompt("Felipe")
+const sobreNome=prompt("Oliveira Santos")
+const idade=prompt("Tenho 22 anos ")
+const estudante=prompt("Sou Estudante")
+console.log(nome,sobreNome,idade,estudante)
