@@ -43,24 +43,37 @@ function calculaIMC(peso, altura) {
 function imprimeInformacoesUsuario() {
   // implemente sua lógica aqui
   // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
-
+ const nome=prompt("nome")
+ const idade=prompt("idade")
+ const email=prompt("email")
+ console.log(`Meu nome e ${nome}, tenho ${idade} anos , e o meu email e ${email}.`)
 }
 
 // EXERCÍCIO 05
 function imprimeTresCoresFavoritas() {
   // implemente sua lógica aqui
+  const digite=prompt("cor 1")
+  const digite2=prompt("cor2")
+  const digite3=prompt("cor3")
+  const array=[digite,digite2,digite3]
+  console.log(array)
 
 }
 
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
   // implemente sua lógica aqui
+  return string.toUpperCase()
+  
 
 }
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
   // implemente sua lógica aqui
+  const preco=custo
+  const ingresso=valorIngresso
+  return preco/ingresso
 
 }
 
@@ -68,29 +81,44 @@ function calculaIngressosEspetaculo(custo, valorIngresso) {
 function checaStringsMesmoTamanho(string1, string2) {
   // implemente sua lógica aqui
 
+  return string1.legth === string2.length
+ 
+
+
 }
 
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
+  return array[0]
+  //return array[array.length-1]
 
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
+  return array[array.length-1]
 
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
+  // precisei de ajuda 
+  const primeiro=retornaPrimeiroElemento(array)
+  const segundo=retornaUltimoElemento(array)
 
+  array=array[0]=segundo
+  array=[array.length-1]=primeiro
+  return array
+  
 }
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
+  return string1.toUpperCase.toLowerCase===string2.toUpperCase.toLowerCase
 
 }
 
