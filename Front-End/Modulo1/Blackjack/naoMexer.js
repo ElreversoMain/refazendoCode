@@ -3,10 +3,16 @@ console.log("Bem vindo !")
 if((confirm)("Deseja começar ?")){
   const carta=comprarCarta()
   const cartas2=comprarCarta2()
+  const carta3=comprarCarta()
+  const cartas4=comprarCarta2()
   let Pontuaçaototal=carta.valor
   let pontuaçaopc=cartas2.valor
-  console.log(`"Usuário - cartas: ${Pontuaçaototal}  - pontuação: ${carta.valor}" `)
-  console.log(`"Computador - cartas: ${pontuaçaopc}  - pontuação ${cartas2.valor}"`)
+  let Pontuaçaototal2=carta3.valor
+  let pontuaçaopc2=cartas4.valor
+  let Pontuaçaototal3=carta.valor+Pontuaçaototal2
+  let pontuaçaopc3=cartas2.valor+pontuaçaopc2
+  console.log(`"Usuário - cartas:  ${Pontuaçaototal} ${Pontuaçaototal2}  - pontuação: ${Pontuaçaototal3}  "`)
+  console.log(`"Computador - cartas: ${pontuaçaopc} ${pontuaçaopc2} - pontuação ${pontuaçaopc3} "`)
   if(Pontuaçaototal>pontuaçaopc){
     console.log(`Vitoria do Usuario`)
   }else if(Pontuaçaototal<pontuaçaopc){
