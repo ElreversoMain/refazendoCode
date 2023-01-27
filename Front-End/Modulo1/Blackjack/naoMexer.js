@@ -1,4 +1,4 @@
-
+//
 console.log("Bem vindo !")
 if((confirm)("Deseja começar ?")){
   const carta=comprarCarta()
