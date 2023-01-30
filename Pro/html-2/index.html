@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function alerta()
+        {
+            alert("Inscrição Aceita")
+        }
+    </script>
+    <script>
+      function Cancelar()
+{
+var x;
+var r=confirm("Deseja Cancelar ?!");
+if (r==true)
+  {
+  x="Deseja Realmente Cancelar ?!";
+  }
+else
+  {
+  x="Convite Cancelado";
+  }
+document.getElementById("cancelar").innerHTML=x;
+}
+    </script>
+</head>
+<body align=center>
+    
+    <h1 style>Inscrição para Aniversário da Nathercia !</h1>
+    <p>Escreva seu Nome: <input type="text" name="name"></p>
+    <p>Escreva Presente que ira Levar: <input type="text" name="name""></p>
+    <p>Escreva Horario de Comparecimento :
+        <select name="Horario">
+            <option value="1">13:00</option>
+            <option value="2">14:00</option>
+            <option value="3">15:00</option>
+            <option value="4">16:00</option>
+            <option value="5">17:00</option>
+        </select>
+    </p>
+    <p> Escreva algum Texto para ela <input type="text" name="name"></p>
+    <p>Classe Social :
+        <select name="Classe">
+            <option value="1">Pobre</option>
+            <option value="2">Classe Media</option>
+            <option value="3">Classe Media alta</option>
+            <option value="4">Rico</option>
+            <option value="5">Velho Rico</option>
+        </select>
+    </p>
+
+    <button type="button" onclick="alerta()" value="Inscreva">Se Inscreva já !</button>
+    <button type="button" onclick="Cancelar()" value="cancelar">Deseja Cancelar Inscrição</button>
+    
+</body>
+</html>
