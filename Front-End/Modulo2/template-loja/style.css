@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.imagem-redes{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: flex-end;
+   
+}
+.introdutorio{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: red;
+  
+
+}
+.pontos{
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+}
+.slogan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imagemtom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+   
+}
+.imagem-redes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: red;
+    padding: 55px;
+
+}
+.slogan2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+td, th {
+    padding: 10px;
+    border: 1px solid grey;
+}
+td > img {
+    height: 100px;
+}
+.introducaa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:red;
+    padding:20px
+}
+
+.texte{
+    border: 1px dashed darkslategray;
+    background-color: rgb(218, 216, 216);
+    margin-left: 20px;
+    width: 800px;
+}
+.form-add {
+    margin: 15px;
+}
+
+.form-add:last-of-type {
+    text-align: center;
+}
+
+.form-add > input {
+    height: 25px;
+}
+.form-add > button {
+    padding: 10px 30px;
+    border: 1px solid rgb(138, 94, 138);
+    background-color: rgb(182, 159, 182);
+    border-radius: 5px;
+}
