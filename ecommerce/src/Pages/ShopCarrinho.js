@@ -14,6 +14,36 @@ const Carrinho = styled.div`
     overflow: hidden;
     padding: ${props => props.status ? "15px" : "15px 0px"};
     z-index: 996;
+    overflow-y: scroll;
+   .scroll::-webkit-scrollbar{
+    width: 10px;
+    border: 1px solid rgb(192,0,75);
+   }
+    
+    img{
+      height:50px;
+      width: 50px;
+      mix-blend-mode: multiply;
+      border-radius: 15px;
+      
+    
+    }
+
+    button{
+        font-size:1rem;
+        background-color:transparent;
+        border:none;
+        cursor:pointer;
+        padding:3px;
+        border-radius:10px;
+        &:hover{
+            background-color: rgb(0,0,0,0.3);   
+        }
+        &:active{
+            color:white;
+            background-color:red;
+        }
+    }
 `;
 
 
@@ -32,7 +62,7 @@ const ShoppingCarrinho = ({ shoppingCart,status,setStatusCart}) => {
           return (
             <div key={produtos.id}>
                <img src={produtos.imagem} />
-               <p>Produto: {produtos.tittle}</p>
+               <p>Produto: {produtos.title}</p>
               <p>Valor por unidade R$ {produtos.price}</p>
               <p>Valor Total: {produtos.price*produtos.quantidade}</p>
               <p>quantidade : {produtos.quantidade}</p>

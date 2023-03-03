@@ -17,12 +17,12 @@ export default createGlobalStyle`
     :target {
         scroll-margin-top: 100px;
     }
-
-    *, button, input {
+ 
+     /* button, input {
         border: 0;
         outline: 0;
         font-family: 'Roboto', sans-serif;
-    }
+    }  */
 
     button {
         cursor: pointer;
