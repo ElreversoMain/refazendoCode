@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+// colocar botão remover somente quando não estiver no carrinho
 const Carrinho = styled.div`
   background-color: yellow;
   width: 100%;
@@ -47,13 +47,23 @@ const Carrinho = styled.div`
 `;
 
 
+
+
 function funcao1()
 {
 alert("Compra finalizada com Sucesso");
 }
 
+
+
 const ShoppingCarrinho = ({ shoppingCart,status,setStatusCart}) => {
   console.log(shoppingCart);
+
+  const totalcart=shoppingCart.length >0 && shoppingCart.reduce((total,current)=>{
+    return total + (current.price*current.quantidade)
+  },0)
+
+ console.log(totalcart)
   return (
     <Carrinho status={status}>
       <h2>Produtos</h2>
@@ -69,9 +79,11 @@ const ShoppingCarrinho = ({ shoppingCart,status,setStatusCart}) => {
             </div>
           );
         })}
+        <div> Total: {totalcart}</div>
         <button onClick={()=>funcao1()}>Finalizar Compra</button>
         <br/>
         <button onClick={setStatusCart}>Voltar</button>
+       
     </Carrinho>
   );
 };

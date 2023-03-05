@@ -18,6 +18,9 @@ import casaco4 from "../photo/casaco4.png";
 import camisa7 from "../photo/camisa7.png";
 import casaco from "../photo/casaco.png";
 
+
+
+
 const Caixinha = styled.div`
   width: 100%;
   min-height: calc(100vh - 110px);
@@ -116,6 +119,7 @@ const Shopping = () => {
       });
     setShoppingCart(array);
   };
+ 
 
   console.log(shoppingCart);
   return (
