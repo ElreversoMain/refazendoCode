@@ -1,0 +1,15 @@
+.body { 
+  height: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 1px solid black;
+  width: 450px;
+  margin:0px auto; 
+  background-image:url(8c98994518b575bfd8c949e91d20548b.jpg) ;
+  
+  }
+
+.button{
+  border-radius: 30px;
+}
