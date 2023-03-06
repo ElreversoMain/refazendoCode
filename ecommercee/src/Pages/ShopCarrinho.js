@@ -79,7 +79,7 @@ const ShoppingCarrinho = ({ shoppingCart,status,setStatusCart}) => {
                <img src={produtos.imagem} />
                <p>Produto:{produtos.title}</p>
               <p>Valor por unidade R${produtos.price},00</p>
-              <p>Valor Total por quantidade:{produtos.price*produtos.quantidade},00</p>
+              <p>Preço Quantidade:{produtos.price*produtos.quantidade},00</p>
               <p>quantidade : {produtos.quantidade}</p>
             </div>
           );

@@ -159,7 +159,7 @@ const Shopping = () => {
               <Alinhar>
                 <img src={produto.imagem} />
               </Alinhar>
-              <Alinhar> <h3>R$:{produto.price}</h3></Alinhar>
+              <Alinhar> <h3>R$:{produto.price},00</h3></Alinhar>
               <Alinhar>
                 <button onClick={() => handleAddtoCart(produto)}>
                   Comprar
