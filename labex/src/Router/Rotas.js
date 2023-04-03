@@ -1,14 +1,19 @@
 
-
 export const HomePage=(navigate)=>{
     navigate("/")
 }
 export const Admin=(navigate)=>{
     navigate("/Admin")
 }
-export const ListaViagem=(navigate)=>{
-    navigate("/ListaViagem")
+export const AdminHomePage=(navigate)=>{
+    navigate("/AdminHomePage")
 }
-export const Inscreva=(navigate)=>{
-    navigate("/Inscreva")
+export const AdminCreateTrip=(navigate)=>{
+    navigate("/AdminCreateTrip")
+}
+export const ListTripsPage=(navigate)=>{
+    navigate("/ListTripsPage")
+}
+export const  ApplicationFormPage=(navigate)=>{
+    navigate("/ApplicationFormPage")
 }

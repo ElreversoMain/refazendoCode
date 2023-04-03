@@ -11,7 +11,7 @@ const HomePage = () => {
           <h1>LabeX</h1>
         </Container>
         <Buttons>
-          <Button onClick={()=>navigate("/ListaViagem")}>Ver Viagens</Button>
+          <Button onClick={()=>navigate("/ListTripsPage")}>Ver Viagens</Button>
           <Button onClick={()=>navigate("/Admin")}>Àrea de Admin</Button>
         </Buttons>
       </ContainerPai>

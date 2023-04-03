@@ -1,8 +1,10 @@
 import Admin from "../Àrea de Admin/Admin"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Homepage from "../HomePage/HomePage"
-import ListaViagem from "../ListaViagem/ListaViagem"
-import Inscreva from "../Inscrever-se/Inscreva"
+import AdminHomePage from "../AdminHomePage/AdminHomePage"
+import AdminCreateTrip from "../AdminCreateTrip/AdminCreateTrip"
+import ListTripsPage from "../ListTripsPage/ListTripsPage"
+import  ApplicationFormPage from "../ApplicationFormPage/ApplicationFormPage"
 
 
 
@@ -13,9 +15,10 @@ const Navigator=()=>{
         <Routes>
             <Route path="/" element={<Homepage/>}/>
             <Route path="Admin" element={<Admin/>}/>
-            <Route path="ListaViagem" element={<ListaViagem/>}/>
-            <Route path="Inscreva" element={<Inscreva/>}/>
-
+            <Route path="AdminHomePage" element={<AdminHomePage/>}/>
+            <Route path="AdminCreateTrip" element={<AdminCreateTrip/>}/>
+            <Route path="ListTripsPage" element={<ListTripsPage/>}/>
+            <Route path="ApplicationFormPage" element={< ApplicationFormPage/>}/>
         </Routes>
         </BrowserRouter>
     </>
