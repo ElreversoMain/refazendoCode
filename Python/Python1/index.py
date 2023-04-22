@@ -23,5 +23,7 @@ area_quadrada = CalcAreaQuadrada (largura, altura)
 latas_tinta = QuantTintas(area_quadrada)
 
 # Saida de Dados
-print('A largura da sua parede é: ', area_quadrada,' m².') # Entrada: 2*25 | Saida: 50 m²
-print('Você vai precisar de', latas_tinta,'latas de tinta para pintar essa parede.') # Saída: 25 Latas de tinta...
+
+
+print(f'A largura da sua parede é: {area_quadrada} m².') # Entrada: 2*25 | Saida: 50 m²
+print(f'Você vai precisar de {latas_tinta:.2f} latas de tinta para pintar essa parede') # Saída: 25 Latas de tinta...
