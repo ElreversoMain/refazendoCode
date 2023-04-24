@@ -1,6 +1,6 @@
 import {Request,Response} from "express"
 import connection from "../BaseDatabase"
-import { Buying } from "../Types/Comprar"
+
 
 export  const searchProduct=async(req:Request,res:Response)=>{
     let ErrorCode=400
