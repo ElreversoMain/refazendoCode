@@ -6,14 +6,12 @@ export  const searchProduct=async(req:Request,res:Response)=>{
     let ErrorCode=400
     try{
         let id=req.query.id as string
-        // let produto=req.query.produto as string
        
       
 
         const result=await connection("Shopping")
         .select("*")
          .where("id","like",`%${id}%`)
-        // .where("produto","like",`%${produto}}%`)
         
         res.status(201).send(result)
     }catch(error:any){
