@@ -11,7 +11,7 @@ export const DeleteProductId=async(req:Request,res:Response)=>{
         .where("id","like",`%${id}%`)
         .delete()
 
-        res.status(201).send("produto deletado")
+        res.status(201).send({message:"produto deletado",deletar})
 
 
     }catch(error:any){
