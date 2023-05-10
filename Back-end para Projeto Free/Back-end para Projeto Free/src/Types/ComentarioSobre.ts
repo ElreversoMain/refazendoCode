@@ -1,4 +1,4 @@
-export class comentarios{
+export class comentariosPerson{
     constructor(  
      private name:string,
      private hora:number,
