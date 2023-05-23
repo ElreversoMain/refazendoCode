@@ -98,3 +98,37 @@
 //     console.log(resultado)
 // }
 // calcularEspetaculo()
+
+//exercicio 8
+// const string=prompt("digite algo")
+// const string2=prompt("digite outra coisa")
+// const result=string.length===string2.length
+// console.log(result)
+
+// function calcularLetra(){
+//     const string=prompt("digite algo")
+//     const string2=prompt("digite outro")
+//     const result=string.length===string2.length
+//     console.log(result)
+// }
+// calcularLetra()
+
+// exercicio 9
+// array=[1,2,3]
+// console.log(array.splice(2,3))
+// console.log([1])
+
+// function chamar(){
+//     array=[1,2,3]
+//     console.log(array.splice(2,3))
+//     console.log([1])
+// }
+// chamar()
+
+// exercicio 10
+// array=[1,2,3,4,5,6,7,8,9,10]
+// console.log([10])
+// console.log(array.splice(9))
+
+
+
