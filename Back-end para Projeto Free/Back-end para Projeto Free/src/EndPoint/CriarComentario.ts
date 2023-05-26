@@ -18,8 +18,8 @@ export const CreateTittle=async(req:Request,res:Response)=>{
         .select()
         .where({name})
 
-        if(findTittle.length>=2){
-            throw new Error("2 post for one name ")
+        if(findTittle.length>=1){
+            throw new Error("1 post for one name ")
         }
         const createAccount=new CriarComentario(
             Date.now().toString(),
@@ -35,8 +35,7 @@ export const CreateTittle=async(req:Request,res:Response)=>{
             name:createAccount.GetName(),
             titulo:createAccount.GetTitulo(),
             hora:createAccount.GetHora(),
-            comentariomy:createAccount.GetComentarios(),
-
+    
         })
         res.status(201).send({message:"You post was create congratulations",CriarComentario:CriarComentario})
     }catch(error:any){
