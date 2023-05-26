@@ -1,4 +1,3 @@
-import {comentariosPerson } from "./ComentarioSobre"
 
 export  class CriarComentario{
     constructor(
@@ -7,15 +6,14 @@ export  class CriarComentario{
         private titulo:string,
         private hora:number,
         private comentariomy:string,
-        private comentario=[comentariosPerson]
+
 
     ){
         this.id=id,
         this.name=name,
         this.titulo=titulo,
         this.hora=hora,
-        this.comentariomy=comentariomy,
-        this.comentario=comentario
+        this.comentariomy=comentariomy
     }
     public GetID(){
         return this.id
@@ -32,8 +30,6 @@ export  class CriarComentario{
     public GetComentariomy(){
         return this.comentariomy
     }
-    public GetComentarios(){
-        return this.comentario
-    }
-    
+
+   
 }
