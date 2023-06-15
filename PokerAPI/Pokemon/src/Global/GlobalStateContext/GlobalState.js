@@ -2,11 +2,12 @@ import react, { useEffect, useState } from "react"
 import GlobalStateContext from "./GlobalStateContext"
 import { BASE_URL } from "../../constants/urls"
 import axios from "axios"
-//29:02
+
 
 const GlobalState=(props)=>{
    const [pokemonNames,setPokemonNames]=useState([])
    const [pokemons,setPokemon]=useState([])
+   const [pokedex,setPokedex]=useState([])
 
    console.log(pokemons)
    useEffect(()=>{
@@ -19,11 +20,12 @@ const GlobalState=(props)=>{
         axios.get(item.url).then((response)=>{
             newList.push(response.data)
             if(newList.length===20){
-                setPokemon(newList)
+                const orderedList=newList.sort((a,b)=>{
+                return a.id-b.id
+                })
+                setPokemon(orderedList)
             }
         })
-
-
         .catch((error)=>{
         console.log(error.message)
     })
@@ -40,8 +42,10 @@ const GlobalState=(props)=>{
     })
    }
 
+   const data={pokemonNames,setPokemonNames,pokemons,setPokemon,pokedex,setPokedex}
+
     return (
-        <GlobalStateContext.Provider value={{}}>
+        <GlobalStateContext.Provider value={data}>
             {props.children}
         </GlobalStateContext.Provider>
     )

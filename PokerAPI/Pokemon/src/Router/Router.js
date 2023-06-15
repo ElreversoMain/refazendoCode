@@ -1,16 +1,16 @@
 import React from "react"
 import {BrowserRouter,Route, Routes} from "react-router-dom"
-import Pokedex from "../Pokedex/Pokedex"
-import PokemonDetail from "../PokemonDetail/PokemonDetail"
-import PokemonList from "../PokemonList/PokemonList"
+import PokedexScreen from "../PokedexScreen/PokedexScreen"
+import PokemonDetailScreen from "../PokemonDetailScreen/PokemonDetailScreen"
+import PokemonListScreen from "../PokemonListScreen/PokemonListScreen"
 
 const Router=()=>{
     return (
        <BrowserRouter>
        <Routes>
-        <Route path="/"element={<Pokedex/>}/>
-        <Route path="/pokemon:name" element={<PokemonDetail/>}/>
-        <Route path="/pokedex" element={<PokemonList/>}/>
+        <Route path={"/"}element={<PokemonListScreen/>}/>
+        <Route path={"/pokemons/:name"} element={<PokemonDetailScreen/>}/>
+        <Route path={"/pokedex"} element={<PokedexScreen/>}/>
        </Routes>
        </BrowserRouter>
     )

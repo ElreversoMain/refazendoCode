@@ -1,9 +1,12 @@
-export const goToPokemonsList=(history)=>{
-history.push("/")
+import {Navigate} from "react-router-dom"
+
+export const PokemonListScreen=(history)=>{
+history.push("/");
 }
-export const GotoPokemonDetail=(history,name)=>{
-    history.push(`/pokemon/${name}`)
+
+export const PokemonDetailScreen=(navigate,name)=>{
+    navigate(`/pokemons/${name}`);
 }
-export const goToPokedex=(history)=>{
-    history.push("/pokedex")
+export const PokedexScreen=(history)=>{
+  history.push("/pokedex");
 }
