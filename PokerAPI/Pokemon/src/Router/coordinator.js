@@ -7,6 +7,6 @@ history.push("/");
 export const PokemonDetailScreen=(navigate,name)=>{
     navigate(`/pokemons/${name}`);
 }
-export const PokedexScreen=(history)=>{
-  history.push("/pokedex");
+export const PokedexScreen=(navigate)=>{
+  navigate("/pokedex");
 }
