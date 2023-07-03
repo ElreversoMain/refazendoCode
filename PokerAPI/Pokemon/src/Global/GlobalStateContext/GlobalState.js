@@ -8,11 +8,15 @@ const GlobalState=(props)=>{
    const [pokemonNames,setPokemonNames]=useState([])
    const [pokemons,setPokemon]=useState([])
    const [pokedex,setPokedex]=useState([])
+   const [offset,setOffset]=useState(0)
+   const [limit,setLimit]=useState(20)
+   
+   
 
    console.log(pokemons)
    useEffect(()=>{
      getPokemonNames()
-   },[])
+   },[offset])
 
    useEffect(()=>{
     const newList=[]
@@ -33,16 +37,35 @@ const GlobalState=(props)=>{
 
    },[pokemonNames])
 
+   
    const getPokemonNames=()=>{
-    axios.get(`${BASE_URL}/pokemon`)
+    axios.get(`${BASE_URL}/pokemon?offset=${offset}&limit=${limit}`)
     .then((response)=>
     setPokemonNames(response.data.results)
     ).catch((error)=>{
         console.log(error.message)
     })
-   }
+   
 
-   const data={pokemonNames,setPokemonNames,pokemons,setPokemon,pokedex,setPokedex}
+}
+const goToNextPage = () => {
+    setOffset(offset + 20)
+    getPokemonNames()
+    if(offset===1140){
+        setLimit(14)
+    } else{
+        setLimit(20)
+    }
+}
+
+const goToPrevioustPage = () => {
+        setOffset(offset - 20)
+        getPokemonNames()
+}
+
+
+
+   const data={pokemonNames,setPokemonNames,pokemons,setPokemon,pokedex,setPokedex,goToNextPage,goToPrevioustPage}
 
     return (
         <GlobalStateContext.Provider value={data}>
