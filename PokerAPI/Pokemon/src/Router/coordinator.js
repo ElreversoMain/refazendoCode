@@ -1,7 +1,7 @@
 import {Navigate} from "react-router-dom"
 
-export const PokemonListScreen=(history)=>{
-history.push("/");
+export const PokemonListScreen=(navigate)=>{
+navigate("/");
 }
 
 export const PokemonDetailScreen=(navigate,name)=>{
