@@ -28,6 +28,25 @@ justify-content: center;
 padding-left: 25px;
 
 `
+export const Button=styled.button`
+background-color: transparent;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    top: 17px;
+    left: 8vw;
+`
+export const Buttonn=styled.button`
+background-color: transparent;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    top: 17px;
+    left: 10vw;`
 
 
 
