@@ -2,7 +2,9 @@ import React, { useContext, useEffect } from "react";
 import GlobalStateContext from "../Global/GlobalStateContext/GlobalStateContext";
 import {useNavigate} from "react-router-dom"
 import { PokedexScreen, PokemonDetailScreen} from "../Router/coordinator"
-import {  Container, PokerImage, PokerName } from "./StyledList";
+import {  Button, Container, PokerImage, PokerName ,Buttonn} from "./StyledList";
+import img from "../img/left-icon.png"
+import img2 from "../img/right-icon.png"
 
 const PokemonListScreen=({isPokedex})=>{
     const {pokemons,setPokemon,pokedex,setPokedex,goToNextPage,goToPrevioustPage,offset}=useContext(GlobalStateContext)
@@ -43,11 +45,11 @@ const PokemonListScreen=({isPokedex})=>{
           <div><button onClick={()=>PokedexScreen(link)}>Pokedex</button></div>
            {pokemon}
            <div>
-           {offset !== 1140 && <button onClick={() => goToNextPage()} > Proximo
-                    </button>}
-                    <p>{offset/1}</p>
-                {offset !== 0 && <button onClick={() => goToPrevioustPage()} >Voltar
-                    </button>}
+           {offset !== 1140 && <Button onClick={() => goToNextPage()} > 
+                    <img src={img} width={25}/> </Button>}
+                {offset !== 0 && <Buttonn onClick={() => goToPrevioustPage()} >
+                  <img src ={img2} width={25}></img>
+                    </Buttonn>}
                 
                 
             </div>
