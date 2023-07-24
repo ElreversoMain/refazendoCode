@@ -1,12 +1,14 @@
 import React,{useState} from "react";
 import  Router  from "./Router/Router"
 import GlobalState from "./Global/GlobalStateContext/GlobalState";
+import GlobalStyle from "./GlobalStyle";
 
 const App=()=>{
   
   return (
     <GlobalState>
       <Router/>
+      <GlobalStyle/>
     </GlobalState>
   )
 }
