@@ -3,13 +3,14 @@ import {useParams} from "react-router-dom"
 import GlobalStateContext from "../Global/GlobalStateContext/GlobalStateContext"
 import {useNavigate} from "react-router-dom"
 import { PokemonListScreen } from "../Router/coordinator";
-import { Imagem, Imagem2 ,Atributos, Tipos} from "./Styledds";
+import { Imagem, Imagem2 ,Atributos, Tipos,BackGround,Habilidade} from "./Styledds";
+import { PokeName } from "../PokedexScreen/Styless";
 
 
-const PokemonDetailScreen=({pokemon,nome,key})=>{
+const PokemonDetailScreen=()=>{
     const [selectedPokemon,setSelectedPokemon]=useState({})
     const {name}=useParams()
-    const {pokemons}=useContext(GlobalStateContext)
+    const {pokemons,setPokemon,pokedex,setPokedex,}=useContext(GlobalStateContext)
     let link=useNavigate();
 
     console.log(selectedPokemon)
@@ -19,11 +20,11 @@ const PokemonDetailScreen=({pokemon,nome,key})=>{
             setSelectedPokemon(currentPokemon)
 
     },[])
-
+    
 
     return (
        <div>
-        <div><button onClick={()=>PokemonListScreen(link)}>Pokedex</button></div>
+        <div><button onClick={()=>PokemonListScreen(link)}></button></div>
         <Imagem>
         <imagem><img src={selectedPokemon && selectedPokemon.sprites && selectedPokemon.sprites.front_default}/></imagem>
         </Imagem>
@@ -31,27 +32,34 @@ const PokemonDetailScreen=({pokemon,nome,key})=>{
           <img src={selectedPokemon && selectedPokemon.sprites && selectedPokemon.sprites.back_default}/>
           </Imagem2>
           <Atributos>
+            <div>Atributos :</div>
             {selectedPokemon && selectedPokemon.stats && selectedPokemon.stats.map((stat)=>{
             return (
                 <p key={stat.stat.name}>
-                    <strong>{stat.stat.name}:</strong>{stat.base_stat}
+                    <strong>{stat.stat.name}:</strong><BackGround>{stat.base_stat}</BackGround>
                 </p>
             )
           })}
           </Atributos>
           <Tipos>
+            <div>Tipo :</div>
             {selectedPokemon && selectedPokemon.types && selectedPokemon.types.map((type)=>{
             return <p key={type.type.name}>{type.type.name}</p>
           })}
           </Tipos>
-          <div>{selectedPokemon && selectedPokemon.moves && selectedPokemon.moves.map((move,index)=>{
+          <Habilidade>
+            <div>Habilidade :</div>
+            <br/>
+            {selectedPokemon && selectedPokemon.moves && selectedPokemon.moves.map((move,index)=>{
             return (
                 index <10 && <p key={move.move.name}>{move.move.name}</p>
             )
-          })}</div>
-       </div>
-       
+          })}
+          </Habilidade>
+        
 
+       </div>
+     
     
       
      
