@@ -25,6 +25,7 @@ top: 17px;
 left: 42vw;
 bottom: 42px;
 
+  
 `
 export const Tipos=styled.div`
 display: flex;
@@ -36,4 +37,17 @@ display: inline-block;
 position: absolute;
 top: 17px;
 left: 65vw;
+`
+
+export const BackGround=styled.div`
+border-radius: 150px;
+background-color: pink;
+`
+export const Habilidade=styled.div`
+display: grid;
+align-items: center;
+justify-content: center;
+padding-right:100px;
+padding-top: 50px;
+
 `
