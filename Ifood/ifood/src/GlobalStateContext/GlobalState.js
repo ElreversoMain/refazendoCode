@@ -1,12 +1,10 @@
 import React,{useEffect,useState} from "react";
 import GlobalStateContext from "./GlobalStateContext";
-import URL from "../URL/URL"
-import axios from "axios"
+import { toast } from "react-toastify";
 
 const GlobalState=(props)=>{
+    
   
-
- 
  
 
     const data={}
