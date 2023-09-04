@@ -8,3 +8,9 @@ export const Cadastrar=(navigate)=>{
 export const AddEndereco=(navigate)=>{
     navigate("/AddEndereco")
 }
+export const GetProfile=(navigate)=>{
+    navigate("/GetProfile")
+}
+export const GetRestaurant=(navigate)=>{
+    navigate("/GetRestaurant")
+}
