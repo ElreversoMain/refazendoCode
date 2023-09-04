@@ -4,7 +4,7 @@ import axios from "axios";
 import { BASE_URL } from "../../URL/URL";
 import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import {CaixaPai,Button} from "./Styled"
+import { CaixaPai, Button } from "./Styled";
 
 const Cadastrar = () => {
   const [Name, setStateName] = useState("");
@@ -42,7 +42,7 @@ const Cadastrar = () => {
     axios
       .post(URL, body, header)
       .then((res) => {
-        alert(`Sucesso ${Name}`, navigate("/"));
+        alert(`Sucesso ${Name}`, navigate("/AddEndereco"));
       })
       .catch((res) => {
         alert("Algo no cadastro esta errado");
@@ -59,7 +59,7 @@ const Cadastrar = () => {
           value={Name}
         />
       </div>
-      <br/>
+      <br />
       <div>
         <TextField
           name="e-mail"
@@ -69,7 +69,7 @@ const Cadastrar = () => {
           onChange={(event) => escolherEmail(event)}
         />
       </div>
-      <br/>
+      <br />
       <div>
         <TextField
           name="CPF"
@@ -80,7 +80,7 @@ const Cadastrar = () => {
           inputProps={{ maxLength: 11 }}
         />
       </div>
-      <br/>
+      <br />
       <div>
         <TextField
           name="senha"
@@ -90,9 +90,8 @@ const Cadastrar = () => {
           onChange={(event) => escolherPassword(event)}
           inputProps={{ maxLength: 10 }}
         />
-          
       </div>
-           <br/>
+      <br />
       <div>
         <Button onClick={() => Cadastrar()}>Cadastrar</Button>
       </div>

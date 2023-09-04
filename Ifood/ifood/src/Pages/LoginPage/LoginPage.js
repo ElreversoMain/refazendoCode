@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "@mui/material";
 import { TextField } from "@mui/material";
 import axios from "axios";
 import { BASE_URL } from "../../URL/URL";
 import { useNavigate } from "react-router-dom";
-import { Button, Caixa,Alinhar} from "./Styled";
+import { Button, Caixa, Alinhar } from "./Styled";
+import GlobalStateContext from "../../GlobalStateContext/GlobalStateContext";
 
 const LoginPage = () => {
+  const {} = useContext(GlobalStateContext);
   const [Login, SetStateLogin] = useState("");
   const [Senha, SetStateSenha] = useState("");
-  let navigator = useNavigate();
+  const navigate = useNavigate();
 
   const fazerLogin = (event) => {
     SetStateLogin(event.target.value);
@@ -29,12 +31,14 @@ const LoginPage = () => {
       .post(URL, body)
       .then((res) => {
         window.localStorage.setItem("token", res.data.token);
-        //navigator("/")
-        alert(`Seja bem vindo ${Login}`);
-        console.log(res.data.token);
+        if (res.data.user.hasAddress === true) {
+          navigate("/GetRestaurant");
+        } else {
+          navigate("/AddEndereco");
+        }
       })
-      .catch((erro) => {
-        alert("Usuario Não Encontrado");
+      .catch((error) => {
+        alert("Senha ou Email Invalidos");
       });
   };
   return (
@@ -48,6 +52,7 @@ const LoginPage = () => {
           onChange={(event) => fazerLogin(event)}
           value={Login}
           type="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           required
         />
       </div>
@@ -62,17 +67,17 @@ const LoginPage = () => {
           onChange={(event) => fazerSenha(event)}
           value={Senha}
           inputProps={{ maxLength: 10 }}
+          required
         />
       </div>
       <br />
       <Button onClick={() => Logando()}>Entrar</Button>
       <Alinhar>
         <br />
-       
-          <a onClick={() => navigator("/Cadastrar")}>
-            Não e Cadastrado ? <u>Registrar-se</u> aqui!
-          </a>
-        
+
+        <a onClick={() => navigator("/Cadastrar")}>
+          Não e Cadastrado ? <u>Registrar-se</u> aqui!
+        </a>
       </Alinhar>
     </Caixa>
   );
