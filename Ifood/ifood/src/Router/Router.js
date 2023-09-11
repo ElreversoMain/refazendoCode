@@ -5,6 +5,7 @@ import Cadastrar from "../Pages/Cadastrar/Cadastrar"
 import AddEndereco from "../Pages/AdicionarEndereço/AddEndereco"
 import GetProfile from "../Pages/GetProfile/GetProfile"
 import GetRestaurant from "../Pages/GetRestaurant/GetRestaurant"
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile"
 
 
 
@@ -18,6 +19,7 @@ const Router=()=>{
         <Route path={"/AddEndereco"} element={<AddEndereco/>}/>
         <Route path={"/GetProfile"} element={<GetProfile/>}/>
         <Route path={"/GetRestaurant"} element={<GetRestaurant/>}/>
+        <Route path={"/UpdateProfile"} element={<UpdateProfile/>}/>
        </Routes>
        </BrowserRouter>
     )

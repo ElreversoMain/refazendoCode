@@ -9,7 +9,7 @@ const GetProfile = () => {
 
   useEffect(() => {
     GetProfiles();
-  });
+  },[]);
 
   return (
     <div>
@@ -23,7 +23,10 @@ const GetProfile = () => {
       <div> Email: {profile.email}</div>
       <div>CPF: {profile.cpf}</div>
       <div> Endereço: {profile.address}</div>
+      <div>Atualizar Perfil</div>
+      <div><button onClick={()=>navigate("/UpdateProfile")}></button></div>
     </div>
+    
   );
 };
 export default GetProfile;

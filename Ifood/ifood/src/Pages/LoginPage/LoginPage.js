@@ -8,7 +8,7 @@ import { Button, Caixa, Alinhar } from "./Styled";
 import GlobalStateContext from "../../GlobalStateContext/GlobalStateContext";
 
 const LoginPage = () => {
-  const {} = useContext(GlobalStateContext);
+  const {  } = useContext(GlobalStateContext);
   const [Login, SetStateLogin] = useState("");
   const [Senha, SetStateSenha] = useState("");
   const navigate = useNavigate();
@@ -39,6 +39,7 @@ const LoginPage = () => {
       })
       .catch((error) => {
         alert("Senha ou Email Invalidos");
+       console.log(error.message)
       });
   };
   return (
@@ -71,11 +72,11 @@ const LoginPage = () => {
         />
       </div>
       <br />
-      <Button onClick={() => Logando()}>Entrar</Button>
+      <Button onClick={() => Logando()}  >Entrar</Button>
       <Alinhar>
         <br />
 
-        <a onClick={() => navigator("/Cadastrar")}>
+        <a onClick={() => navigate("/Cadastrar")}>
           Não e Cadastrado ? <u>Registrar-se</u> aqui!
         </a>
       </Alinhar>
