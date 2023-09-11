@@ -3,7 +3,7 @@ export const LoginPage=(navigate)=>{
     navigate("/");
 }
 export const Cadastrar=(navigate)=>{
-    navigate("Cadastrar")
+    navigate("/Cadastrar")
 }
 export const AddEndereco=(navigate)=>{
     navigate("/AddEndereco")
@@ -13,4 +13,7 @@ export const GetProfile=(navigate)=>{
 }
 export const GetRestaurant=(navigate)=>{
     navigate("/GetRestaurant")
+}
+export const UpdateProfile=(navigate)=>{
+    navigate("/UpdateProfile")
 }
