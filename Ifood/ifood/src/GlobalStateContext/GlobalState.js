@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from "react";
 import GlobalStateContext from "./GlobalStateContext";
-import { toast } from "react-toastify";
 import { BASE_URL } from "../URL/URL";
 import axios from "axios";
 
@@ -43,7 +42,7 @@ const GlobalState=(props)=>{
 
         .then((res)=>{
             setStateRestaurant(res.data.restaurants)
-            console.log(res)
+
         })
         .catch((erro)=>{
             alert("Erro no GetRestaurant")
@@ -51,10 +50,26 @@ const GlobalState=(props)=>{
         
     }
 
-
- 
-
-    const data={profile,setStateProfile,GetProfiles, GetRestaurant,restaurant,setStateRestaurant}
+    const GetRestaurantDetail=(id)=>{
+        const header={
+            headers:{
+                auth:window.localStorage.getItem("token"),
+            }
+        }
+        axios
+        .get(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsC/restaurants/${id}`,header)
+        .then((response)=>{
+            setStateRestaurantDetail(response.data.restaurant.products)
+            console.log(response)
+        })
+        .catch((erro)=>{
+            alert("Erro no HetRestaurantDetail")
+        })
+       
+    }
+  
+    const data={profile,setStateProfile,GetProfiles, GetRestaurant,restaurant,setStateRestaurant,
+        restaurantDetail,setStateRestaurantDetail,GetRestaurantDetail}
     return (
         <GlobalStateContext.Provider value={data}>
             {props.children}
