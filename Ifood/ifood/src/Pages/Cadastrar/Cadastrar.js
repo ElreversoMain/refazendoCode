@@ -4,7 +4,8 @@ import axios from "axios";
 import { BASE_URL } from "../../URL/URL";
 import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { CaixaPai, Button } from "./Styled";
+import { CaixaPai, Button, Photo } from "./Styled";
+import photo from "../Fotos/futuro.png"
 
 const Cadastrar = () => {
   const [Name, setStateName] = useState("");
@@ -50,6 +51,7 @@ const Cadastrar = () => {
   };
   return (
     <CaixaPai>
+      <Photo><img src={photo}></img></Photo>
       <div>
         <TextField
           name="nome"

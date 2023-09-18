@@ -17,3 +17,6 @@ export const GetRestaurant=(navigate)=>{
 export const UpdateProfile=(navigate)=>{
     navigate("/UpdateProfile")
 }
+export const GetDetailRestaurant=(navigate)=>{
+    navigate("/GetDetailRestaurant")
+}
