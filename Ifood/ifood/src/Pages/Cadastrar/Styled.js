@@ -4,7 +4,7 @@ export const CaixaPai=styled.div`
 display: grid;
 align-items: center;
 justify-content: center;
-padding: 150px;
+padding: 25px;
 
 
 `
@@ -22,3 +22,11 @@ export const Button = styled.button`
   cursor: pointer;
   padding-left: 119px;
 `;
+
+export const Photo=styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+padding-bottom: 50px;
+
+`

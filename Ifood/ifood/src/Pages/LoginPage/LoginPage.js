@@ -4,8 +4,9 @@ import { TextField } from "@mui/material";
 import axios from "axios";
 import { BASE_URL } from "../../URL/URL";
 import { useNavigate } from "react-router-dom";
-import { Button, Caixa, Alinhar } from "./Styled";
+import { Button, Caixa, Alinhar,Photo } from "./Styled";
 import GlobalStateContext from "../../GlobalStateContext/GlobalStateContext";
+import photo from "../Fotos/futuro.png"
 
 const LoginPage = () => {
   const {  } = useContext(GlobalStateContext);
@@ -44,6 +45,7 @@ const LoginPage = () => {
   };
   return (
     <Caixa>
+      <Photo><img src={photo}></img></Photo>
       <div>
         <TextField
           name="email"

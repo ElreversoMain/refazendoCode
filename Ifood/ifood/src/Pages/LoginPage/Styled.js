@@ -26,3 +26,10 @@ display: grid;
 align-items: center;
 justify-content: center;
 `
+export const Photo=styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+padding-bottom: 50px;
+
+`
