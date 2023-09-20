@@ -10,6 +10,7 @@ const GetDetailRestaurant = () => {
     restaurantDetail,
     setStateRestaurantDetail,
     GetRestaurantDetail,
+    addProduct
   } = useContext(GlobalStateContext);
   const { id } = useParams();
   useEffect(() => {
@@ -31,7 +32,8 @@ const GetDetailRestaurant = () => {
           </div>
           <div>{product.name}</div>
           <div>{product.description}</div>
-          <div>{product.price.toFixed(2).replace(".", ",")}</div>
+          <div>R$ {product.price.toFixed(2).replace(".", ",")}</div>
+          <button onClick={()=>addProduct(product,id)}>Adicionar</button>
         </div>
       );
     }
@@ -45,7 +47,8 @@ const GetDetailRestaurant = () => {
             <img src={product.photoUrl} alt="Imagem Produto"></img>
           </div>
           <div>{product.description}</div>
-          <div>{product.price.toFixed(2).replace(".", ",")}</div>
+          <div>R$ {product.price.toFixed(2).replace(".", ",")}</div>
+          <button onClick={()=>addProduct(product,id)}>Adicionar</button>
         </div>
       );
     }
@@ -60,7 +63,8 @@ const GetDetailRestaurant = () => {
           </div>
           <div>{product.name}</div>
           <div>{product.description}</div>
-          <div>{product.price.toFixed(2).replace(".", ",")}</div>
+          <div>R$ {product.price.toFixed(2).replace(".", ",")}</div>
+          <button onClick={()=>addProduct(product,id)}>Adicionar</button>
         </div>
       );
     }
@@ -68,8 +72,11 @@ const GetDetailRestaurant = () => {
 
   return (
     <div>
+      <h1>Comida</h1>
       {renderMainProducts}
+      <h1>Acompanhamento</h1>
       {renderSideDish}
+      <h1>Bebida</h1>
       {renderDrinks}
     </div>
   );
