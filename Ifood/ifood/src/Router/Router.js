@@ -7,6 +7,8 @@ import GetProfile from "../Pages/GetProfile/GetProfile"
 import GetRestaurant from "../Pages/GetRestaurant/GetRestaurant"
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile"
 import GetDetailRestaurant from "../Pages/GetDetailRestaurant/GetDetailRestaurant"
+import Cart from "../Pages/Cart/Cart"
+
 
 
 
@@ -22,6 +24,7 @@ const Router=()=>{
         <Route path={"/GetRestaurant"} element={<GetRestaurant/>}/>
         <Route path={"/UpdateProfile"} element={<UpdateProfile/>}/>
         <Route path={`/GetDetailRestaurant/:id`} element={<GetDetailRestaurant/>}/>
+        <Route path={`/Cart`} element={<Cart/>}/>
        </Routes>
        </BrowserRouter>
     )
