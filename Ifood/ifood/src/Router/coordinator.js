@@ -20,3 +20,6 @@ export const UpdateProfile=(navigate)=>{
 export const GetDetailRestaurant=(navigate)=>{
     navigate("/GetDetailRestaurant")
 }
+export const Cart=(navigate)=>{
+    navigate("/Cart")
+}

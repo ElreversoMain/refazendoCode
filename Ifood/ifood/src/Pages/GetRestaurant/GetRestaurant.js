@@ -50,6 +50,7 @@ const GetRestaurant = () => {
       <div>{renderDetailsRestaurant}</div>
 
       <button onClick={() => navigate("/GetProfile")}></button>
+      <button onClick={()=>navigate("/Cart")}>Compras</button>
     </div>
   );
 };

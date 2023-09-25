@@ -144,6 +144,7 @@ const GlobalState = (props) => {
       });
       setCart(newCart);
       alert("Produto adicionado ao carrinho");
+      console.log(newCart)
     }
 
     localStorage.setItem("restaurantId", restaurantId);
@@ -231,6 +232,9 @@ const GlobalState = (props) => {
     removeProduct,
     addMoreProduct,
     removeMoreProduct,
+    postPlaceOrder,
+    setCart,
+    cart
   };
   return (
     <GlobalStateContext.Provider value={data}>

@@ -61,6 +61,7 @@ const UpdateProfile = () => {
       name="NewCpf"
       placeholder="Escolha um CPF"
       label="*CPF"
+      inputProps={{ maxLength: 10 }}
       onChange={(event)=>updateCpf(event)}/>
     </div>
     <button onClick={()=>Update()}></button>

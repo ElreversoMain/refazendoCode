@@ -24,7 +24,7 @@ const GetProfile = () => {
       <div>CPF: {profile.cpf}</div>
       <div> Endereço: {profile.address}</div>
       <div>Atualizar Perfil</div>
-      <div><button onClick={()=>navigate("/UpdateProfile")}></button></div>
+      <div><button onClick={()=>navigate("/UpdateProfile")}>Atualizar Perfil</button></div>
     </div>
     
   );
