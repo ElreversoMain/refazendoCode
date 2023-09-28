@@ -10,6 +10,7 @@ const GlobalState = (props) => {
   const [cart, setCart] = useState([]);
   const [activeOrder, setActiveOrder] = useState([]);
   const [orderHistory, setOrderHistory] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   const GetProfiles = () => {
     const header = {
@@ -41,6 +42,7 @@ const GlobalState = (props) => {
 
       .then((res) => {
         setStateRestaurant(res.data.restaurants);
+        setIsLoading(false)
       })
       .catch((erro) => {
         alert("Erro no GetRestaurant");
@@ -57,6 +59,7 @@ const GlobalState = (props) => {
       .get(`${BASE_URL}/restaurants/${id}`, headers)
       .then((resp) => {
         setStateRestaurantDetail(resp.data.restaurant.products);
+        setIsLoading(false)
       })
       .catch((erro) => {
         alert("Erro no HetRestaurantDetail");
@@ -72,28 +75,30 @@ const GlobalState = (props) => {
           quantity: product.quantity,
         };
       }),
-      paymentMethod: method,
+      paymentMethod: method
     };
     axios
-      .post(`${BASE_URL}restaurants/${restaurantId}/order`, body, headers)
+      .post(`${BASE_URL}/restaurants/${restaurantId}/order`, body, headers)
       .then(() => {
-        alert("Pedido Confirmado:");
-        setCart([]);
-        localStorage.removeItem("restaurantId");
-      })
-      .catch((error) => {
-        if (error.includes("409")) {
-          alert("pedido em andamento");
-        } else if (error.includes("400") || error.message.includes("404")) {
-          alert("Informações faltando");
+        alert("Pedido confirmado :)")
+        setCart([])
+        localStorage.removeItem("restaurantId")           
+    })
+
+    .catch((error) => {
+        if (error.message.includes("409")) {
+            alert("Existe outro pedido em andamento!")
         }
-      });
-  };
+        else if (error.message.includes("400") || error.message.includes("404")) {
+            alert("Informações faltando")
+        }  
+    })
+}
 
   const getActiveOrder = () => {
     const headers = { headers: { auth: localStorage.getItem("token") } };
     axios
-      .get(`${BASE_URL}active-order`, headers)
+      .get(`${BASE_URL}/active-order`, headers)
       .then((res) => {
         setActiveOrder(res.data.order);
       })
@@ -105,9 +110,10 @@ const GlobalState = (props) => {
   const ordersHistory = () => {
     const headers = { headers: { auth: localStorage.getItem("token") } };
     axios
-      .get(`${BASE_URL}orders/history`, headers)
+      .get(`${BASE_URL}/orders/history`, headers)
       .then((respon) => {
         setOrderHistory(respon.data.orders);
+        setIsLoading(false)
       })
       .catch((error) => {
         alert("Erro no OrdersHistory");
@@ -224,17 +230,20 @@ const GlobalState = (props) => {
     GetRestaurantDetail,
     activeOrder,
     setActiveOrder,
-    orderHistory,
     setOrderHistory,
     getActiveOrder,
-    ordersHistory,
     addProduct,
     removeProduct,
     addMoreProduct,
     removeMoreProduct,
     postPlaceOrder,
     setCart,
-    cart
+    cart, 
+    ordersHistory,
+    orderHistory,
+    isLoading,
+    setIsLoading
+
   };
   return (
     <GlobalStateContext.Provider value={data}>
