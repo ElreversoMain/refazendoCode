@@ -65,6 +65,7 @@ const UpdateProfile = () => {
       onChange={(event)=>updateCpf(event)}/>
     </div>
     <button onClick={()=>Update()}></button>
+    
 
   </div>;
 };
