@@ -4,6 +4,8 @@ import "@mui/material";
 import axios from "axios";
 import { BASE_URL } from "../../URL/URL";
 import { useNavigate } from "react-router-dom";
+import {CaixaPai,Imagem,Button} from "../AdicionarEndereço/style"
+import photo from "../Fotos/futuro.png"
 
 const AddEndereco = () => {
   const [rua, setStateRua] = useState("");
@@ -66,7 +68,10 @@ const AddEndereco = () => {
   };
 
   return (
-    <div>
+    <CaixaPai>
+      <br/>
+      <Imagem><img src={photo}></img></Imagem>
+      <br/>
       <div>
         <TextField
           name="Rua/Av"
@@ -76,7 +81,7 @@ const AddEndereco = () => {
           onChange={(event) => escolherRua(event)}
         />
       </div>
-
+      <br/>
       <div>
         <TextField
           name="Numero"
@@ -86,7 +91,7 @@ const AddEndereco = () => {
           onChange={(event) => escolherNumero(event)}
         />
       </div>
-
+      <br/>
       <div>
         <TextField
           name="vizinhaca"
@@ -96,7 +101,7 @@ const AddEndereco = () => {
           onChange={(event) => escolherVizinhaca(event)}
         />
       </div>
-
+      <br/>
       <div>
         <TextField
           name="Cidade"
@@ -106,7 +111,7 @@ const AddEndereco = () => {
           value={cidade}
         />
       </div>
-
+      <br/>
       <div>
         <div>
           <TextField
@@ -117,7 +122,7 @@ const AddEndereco = () => {
             onChange={(event) => escolherEstado(event)}
           />
         </div>
-
+        <br/>
         <TextField
           name="complemento"
           placeholder="Complemento"
@@ -126,11 +131,11 @@ const AddEndereco = () => {
           onChange={(event) => escolherComplemento(event)}
         />
       </div>
-
+      <br/>
       <div>
-        <button onClick={() => cadastrarEndereco()}>Cadastrar endereço</button>
+        <Button onClick={() => cadastrarEndereco()}>Cadastrar endereço</Button>
       </div>
-    </div>
+    </CaixaPai>
   );
 };
 

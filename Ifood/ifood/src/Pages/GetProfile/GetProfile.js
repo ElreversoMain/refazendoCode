@@ -40,6 +40,7 @@ const GetProfile = () => {
       <div> Endereço: {profile.address}</div>
       <div>Atualizar Perfil</div>
       <div><button onClick={()=>navigate("/UpdateProfile")}>Atualizar Perfil</button></div>
+      <button onClick={()=>navigate("/AddEndereco")}>Mudar Endereço</button>
       {renderOrders}
     </div>
     

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import GlobalStateContext from "../../GlobalStateContext/GlobalStateContext";
+import {CaixaPai,Imagem,Dados} from "../GetRestaurant/Styled"
 
 const GetRestaurant = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -26,21 +27,24 @@ const GetRestaurant = () => {
   const renderDetailsRestaurant = restaurant.map((restaurantes) => {
     if (restaurant.id === id) {
       return (
-        <div
+        <CaixaPai
           key={restaurantes.id}
           onClick={() => chooseRestaurant(restaurantes.id)}
         >
-          <img src={restaurantes.logoUrl}></img>
-          <div>{restaurantes.name}</div>
-          <div>{restaurantes.category}</div>
-          <div>
-            {restaurantes.deliveryTime} - {restaurantes.deliveryTime + 10} min
+          <Imagem src={restaurantes.logoUrl}></Imagem>
+          <Dados>
+          <div>Restaurante: {restaurantes.name}</div>
+          <div>Categoria: {restaurantes.category}</div>
+          <div> Tempo de Entrega: {restaurantes.deliveryTime} - {restaurantes.deliveryTime + 10} min
           </div>
           <div>
-            frete R${restaurantes.shipping.toFixed(2).replace(".", ",")}
+            Frete R${restaurantes.shipping.toFixed(2).replace(".", ",")}
           </div>
-          <div>{restaurantes.address}</div>
-        </div>
+          <div> Endereço: {restaurantes.address}</div>
+          </Dados>
+          <br/>
+          
+        </CaixaPai>
       );
     }
   });
