@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import GlobalStateContext from "../../GlobalStateContext/GlobalStateContext";
-import {CaixaPai,Imagem,Dados} from "../GetRestaurant/Styled"
+import {CaixaPai,Imagem,Dados,Button} from "../GetRestaurant/Styled"
 
 const GetRestaurant = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -52,9 +52,9 @@ const GetRestaurant = () => {
   return (
     <div>
       <div>{renderDetailsRestaurant}</div>
-
-      <button onClick={() => navigate("/GetProfile")}></button>
-      <button onClick={()=>navigate("/Cart")}>Compras</button>
+       
+      <Button onClick={() => navigate("/GetProfile")}>Cadastro Perfil</Button>
+      <Button onClick={()=>navigate("/Cart")}>Compras</Button>
     </div>
   );
 };

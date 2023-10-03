@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../URL/URL";
 import { TextField } from "@mui/material";
+import {CaixaPai,Button,PositionButton,PositionImage} from "../UpdateProfile/styled"
+import photo from "../Fotos/futuro.png"
 
 const UpdateProfile = () => {
   const [newName, setStateNewName] = useState("");
@@ -41,6 +43,9 @@ const UpdateProfile = () => {
     })
   }
   return <div>
+    <CaixaPai>
+    <PositionImage><img src={photo}></img></PositionImage>
+    <br/>
     <div><TextField
     name="NewName"
     placeholder="Escolha um novo Nome"
@@ -48,7 +53,7 @@ const UpdateProfile = () => {
     onChange={(event)=>updateProfile(event)}
     value={newName}
     /></div>
-
+    <br/>
     <div>
       <TextField
       name="NewEmail"
@@ -56,6 +61,7 @@ const UpdateProfile = () => {
       label="*Email"
       onChange={(event)=>updateEmail(event)}/>
     </div>
+    <br/>
     <div>
       <TextField
       name="NewCpf"
@@ -64,8 +70,10 @@ const UpdateProfile = () => {
       inputProps={{ maxLength: 10 }}
       onChange={(event)=>updateCpf(event)}/>
     </div>
-    <button onClick={()=>Update()}></button>
+    <br/>
+    </CaixaPai  >
     
+    <PositionButton> <Button onClick={()=>Update()}>Cadastrar</Button></PositionButton>
 
   </div>;
 };

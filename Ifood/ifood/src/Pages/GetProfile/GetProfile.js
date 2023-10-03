@@ -20,7 +20,7 @@ const GetProfile = () => {
   const renderOrders =orderHistory && orderHistory.map((order) =>{
     return(
       <div key={order.createAt}>
-        <div>{order.restaurantName}</div>
+        <div>Restaurante: {order.restaurantName}</div>
         <h3><b>SUBTOTAL R$</b>{order.totalPrice.toFixed(2).replace(".", ",")}</h3>
       </div>
     )
