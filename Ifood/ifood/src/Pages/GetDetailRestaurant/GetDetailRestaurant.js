@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import GlobalStateContext from "../../GlobalStateContext/GlobalStateContext";
 import { useParams } from "react-router-dom";
+import {ImagemGlobal,Informacao,Button } from "../GetDetailRestaurant/Styled"
+import { useNavigate } from "react-router-dom";
 
 const GetDetailRestaurant = () => {
   const {
@@ -20,6 +22,9 @@ const GetDetailRestaurant = () => {
     GetRestaurantDetail(id);
   }, []);
 
+  const navigate = useNavigate();
+
+
   const renderMainProducts = restaurantDetail.map((product) => {
     if (
       product.category !== "Acompanhamento" &&
@@ -27,13 +32,16 @@ const GetDetailRestaurant = () => {
     ) {
       return (
         <div key={product.id}>
-          <div>
+          <ImagemGlobal >
             <img src={product.photoUrl} alt="imagem produto"></img>
-          </div>
-          <div>{product.name}</div>
-          <div>{product.description}</div>
-          <div>R$ {product.price.toFixed(2).replace(".", ",")}</div>
-          <button onClick={()=>addProduct(product,id)}>Adicionar</button>
+          </ImagemGlobal >
+          <Informacao>
+          <div>Produto: {product.name}</div>
+          <div>Descrição: {product.description}</div>
+          <div>Preço: R${product.price.toFixed(2).replace(".", ",")}</div>
+          <br/>
+          <Button onClick={()=>addProduct(product,id)}>Adicionar</Button>
+          </Informacao>
         </div>
       );
     }
@@ -43,12 +51,15 @@ const GetDetailRestaurant = () => {
     if (product.category === "Acompanhamento") {
       return (
         <div key={product.id}>
-          <div>
+          <ImagemGlobal >
             <img src={product.photoUrl} alt="Imagem Produto"></img>
-          </div>
+          </ImagemGlobal >
+          <Informacao>
           <div>{product.description}</div>
           <div>R$ {product.price.toFixed(2).replace(".", ",")}</div>
-          <button onClick={()=>addProduct(product,id)}>Adicionar</button>
+          <br/>
+          <Button onClick={()=>addProduct(product,id)}>Adicionar</Button>
+          </Informacao>
         </div>
       );
     }
@@ -58,13 +69,17 @@ const GetDetailRestaurant = () => {
     if (product.category === "Bebida") {
       return (
         <div key={product.id}>
-          <div>
+          <ImagemGlobal >
             <img src={product.photoUrl} alt="Imagem Produto"></img>
-          </div>
+          </ImagemGlobal >
+          <Informacao>
           <div>{product.name}</div>
           <div>{product.description}</div>
           <div>R$ {product.price.toFixed(2).replace(".", ",")}</div>
-          <button onClick={()=>addProduct(product,id)}>Adicionar</button>
+          <br/>
+          <Button onClick={()=>addProduct(product,id)}>Adicionar</Button>
+          </Informacao>
+          
         </div>
       );
     }
@@ -72,11 +87,12 @@ const GetDetailRestaurant = () => {
 
   return (
     <div>
-      <h1>Comida</h1>
+      |<div><button onClick={()=>navigate("/GetRestaurant")}>Voltar</button></div>
+      <Informacao><h2>Comida</h2></Informacao>
       {renderMainProducts}
-      <h1>Acompanhamento</h1>
+      <Informacao><h2>Acompanhamento</h2></Informacao>
       {renderSideDish}
-      <h1>Bebida</h1>
+      <Informacao><h2>Bebida</h2></Informacao>
       {renderDrinks}
     </div>
   );
