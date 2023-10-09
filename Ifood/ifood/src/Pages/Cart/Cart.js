@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import GlobalStateContext from "../../GlobalStateContext/GlobalStateContext";
 import { Button } from "@mui/material";
-
+import {Ordenar,FixaImagem} from "../Cart/styled"
+import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const {
     profile,
@@ -16,6 +17,7 @@ const Cart = () => {
     addProduct,
   } = useContext(GlobalStateContext);
   const [paymentMethod, setPaymentMethod] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     GetProfiles();
@@ -37,13 +39,14 @@ const Cart = () => {
   const renderAddress = restaurant.map((restaurant) => {
     if (restaurant.id === localStorage.getItem("restaurantId")) {
       return (
-        <div key={restaurant.id}>
-          <div>{restaurant.name}</div>
-          <div>{restaurant.address}</div>
+        <Ordenar key={restaurant.id}>
+          <div>Loja: {restaurant.name}</div>
+          <div>Endereço: {restaurant.address}</div>
           <div>
-            {restaurant.deliveryTime} - {restaurant.deliveryTime + 10} min
+            Tempo: {restaurant.deliveryTime} - {restaurant.deliveryTime + 10} min
           </div>
-        </div>
+          <br/>
+        </Ordenar>
       );
     }
   });
@@ -51,23 +54,23 @@ const Cart = () => {
   const renderCart = cart.map((product) => {
     return (
       <div key={product.id}>
-        <div>
+        <FixaImagem>
           <img src={product.photoUrl}></img>
-        </div>
-        <div>{product.name}</div>
-        <div>{product.description}</div>
-        <p>
+        </FixaImagem>
+        <Ordenar>{product.name}</Ordenar>
+        <Ordenar>{product.description}</Ordenar>
+        <Ordenar>
           <b>R${product.price.toFixed(2).replace(".", ",")}</b>
-        </p>
-        <div>
+        </Ordenar>
+        <Ordenar>
           <button onClick={() => removeMoreProduct(product)}>-</button>
-        </div>
-        <div>
+        </Ordenar>
+        <Ordenar>
           <button onClick={() => addMoreProduct(product)}>+</button>
-        </div>
-        <div>
+        </Ordenar>
+        <Ordenar>
           <button onClick={() => removeProduct(product)}>Remover tudo</button>
-        </div>
+        </Ordenar>
       </div>
     );
   });
@@ -76,9 +79,8 @@ const Cart = () => {
     if (restaurant.id === localStorage.getItem("restaurantId")) {
       return (
         <div key={restaurant.id}>
-          <div>SubTotal</div>
-          <p>frete R${restaurant.shipping},00</p>
-          <p>R${sumTotalCart(restaurant.shipping)}</p>
+          <Ordenar>frete R${restaurant.shipping},00</Ordenar>
+          <Ordenar>Valor Total R${sumTotalCart(restaurant.shipping)}</Ordenar>
         </div>
       );
     }
@@ -97,11 +99,15 @@ const Cart = () => {
  
 
   return (
-    <div>
+    <Ordenar>
+      <div><Button onClick={()=>navigate(("/GetRestaurant"))}>Voltar</Button></div>
       <div>{renderCart}</div>
+      <br/>
       <div>{renderAddress}</div>
+      <br/>
       <div>{renderShipping}</div>
-      <div>
+      <br/>
+      <Ordenar>
         <form>
           <input
             id="money"
@@ -126,9 +132,9 @@ const Cart = () => {
             Cartão de crédito
           </label>
         </form>
-      </div>
+      </Ordenar>
       {confirmBtn()}
-    </div>
+    </Ordenar>
   );
 };
 export default Cart;

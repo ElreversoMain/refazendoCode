@@ -51,6 +51,7 @@ const GetRestaurant = () => {
 
   return (
     <div>
+      <Button onClick={()=>navigate("/")}>Voltar</Button>
       <div>{renderDetailsRestaurant}</div>
        
       <Button onClick={() => navigate("/GetProfile")}>Cadastro Perfil</Button>

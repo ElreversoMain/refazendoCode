@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import GlobalStateContext from "../../GlobalStateContext/GlobalStateContext";
 import { useNavigate } from "react-router-dom";
+import {Organizar,Button} from "../GetProfile/styled"
 
 const GetProfile = () => {
   const { profile, setStateProfile, GetProfiles, orderHistory, ordersHistory,  isLoading,
@@ -27,7 +28,8 @@ const GetProfile = () => {
   })
 
   return (
-    <div>
+    <Organizar>
+      <div><Button onClick={()=>navigate(("/GetRestaurant"))}>Voltar</Button></div>
       <div>
         <h1>Dados da conta</h1>
       </div>
@@ -39,10 +41,11 @@ const GetProfile = () => {
       <div>CPF: {profile.cpf}</div>
       <div> Endereço: {profile.address}</div>
       <div>Atualizar Perfil</div>
-      <div><button onClick={()=>navigate("/UpdateProfile")}>Atualizar Perfil</button></div>
-      <button onClick={()=>navigate("/AddEndereco")}>Mudar Endereço</button>
+      <div><Button onClick={()=>navigate("/UpdateProfile")}>Atualizar Perfil</Button></div>
+      <Button onClick={()=>navigate("/AddEndereco")}>Mudar Endereço</Button>
+      <hr/>
       {renderOrders}
-    </div>
+    </Organizar>
     
   );
 };
