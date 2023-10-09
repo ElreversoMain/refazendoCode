@@ -4,11 +4,13 @@ import { BASE_URL } from "../../URL/URL";
 import { TextField } from "@mui/material";
 import {CaixaPai,Button,PositionButton,PositionImage} from "../UpdateProfile/styled"
 import photo from "../Fotos/futuro.png"
+import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateProfile = () => {
   const [newName, setStateNewName] = useState("");
   const [newEmail, setStateNewEmail] = useState("");
   const [newCPF, setStateNewCPF] = useState("");
+  const navigate = useNavigate();
 
   const updateProfile = (event) => {
       setStateNewName(event.target.value);
@@ -74,6 +76,8 @@ const UpdateProfile = () => {
     </CaixaPai  >
     
     <PositionButton> <Button onClick={()=>Update()}>Cadastrar</Button></PositionButton>
+    
+    
 
   </div>;
 };

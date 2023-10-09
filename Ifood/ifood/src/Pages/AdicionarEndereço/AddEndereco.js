@@ -135,6 +135,7 @@ const AddEndereco = () => {
       <div>
         <Button onClick={() => cadastrarEndereco()}>Cadastrar endereço</Button>
       </div>
+      <Button onClick={()=>navigate("/")}>Voltar</Button>
     </CaixaPai>
   );
 };

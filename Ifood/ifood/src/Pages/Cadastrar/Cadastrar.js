@@ -97,6 +97,7 @@ const Cadastrar = () => {
       <div>
         <Button onClick={() => Cadastrar()}>Cadastrar</Button>
       </div>
+      <Button onClick={()=>navigate("/")}>Voltar</Button>
     </CaixaPai>
   );
 };

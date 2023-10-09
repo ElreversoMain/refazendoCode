@@ -87,7 +87,7 @@ const GetDetailRestaurant = () => {
 
   return (
     <div>
-      |<div><button onClick={()=>navigate("/GetRestaurant")}>Voltar</button></div>
+      <div><Button onClick={()=>navigate("/GetRestaurant")}>Voltar</Button></div>
       <Informacao><h2>Comida</h2></Informacao>
       {renderMainProducts}
       <Informacao><h2>Acompanhamento</h2></Informacao>
